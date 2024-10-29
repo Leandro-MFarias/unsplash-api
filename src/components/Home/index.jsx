@@ -1,9 +1,8 @@
 import axios from "axios";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
 import { useQuery } from "@tanstack/react-query";
 
-import duna from "../../../duna.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from 'swiper/modules';
 
 export function Home() {
   async function fetchData() {
@@ -15,9 +14,9 @@ export function Home() {
     const firstFive = results.slice(0, 5);
     const movieImage = firstFive.map((movie) => ({
       ...movie,
-      imageUrl: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`,
+      imageOriginal: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`,
+      image780: `https://image.tmdb.org/t/p/w780${movie.backdrop_path}`,
     }));
-    console.log(movieImage);
     return movieImage;
   }
 
@@ -32,12 +31,6 @@ export function Home() {
   if (isLoading) return <h2>Carrengando</h2>;
   if (error) return `Error: ${error.message}`;
 
-  function handleChangeImage() {
-    if(data === data.length) {
-        
-    }
-  }
-
   return (
     <div className="mb-3 ">
       <h1 className="text-zinc-50 text-3xl px-8 py-10 ml-6 absolute z-10 font-bold">
@@ -46,47 +39,33 @@ export function Home() {
 
       <section className="w-full flex flex-col items-center px-4 space-y-2">
         <div className="h-full w-full flex items-center justify-between m-0">
-          <IoIosArrowBack className="text-slate-200/50 size-7 hover:text-zinc-50 hover:scale-125 transition-colors duration-75 ease-linear cursor-pointer absolute ml-3 z-10" />
+          <Swiper
+            modules={[Navigation, Pagination]}
+            pagination={ { clickable: true } }
+            navigation
+            style={{
+              "--swiper-pagination-color": "#f8fafc",
+              "--swiper-pagination-bullet-size": "10px",
+              "--swiper-pagination-bullet-inactive-color": "#f1f5f9",
+              "--swiper-navigation-color": "#c1c1c1",
+              "--swiper-navigation-size": "20px",
+            }}
+          >
+            {data.map((image) => (
+              <SwiperSlide key={image.id}>
+                <picture>
+                  <source media="(max-width:768px)" srcSet={image.image780} />
+                  <img src={image.imageOriginal} alt={image.title} className="h-[450px] md:h-[640px] lg:h-[840px] w-full"/>
+                </picture>
 
-          <div className="relative w-screen flex">
-            <div className="w-full">
-              <img src={data[0].imageUrl} className="h-[840px] w-full m-auto" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
-            </div>
-
-            <div className="w-full hidden">
-              <img src={data[1].imageUrl} className="h-[840px] w-full m-auto" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
-            </div>
-
-            <div className="w-full hidden">
-              <img src={data[2].imageUrl} className="h-[840px] w-full m-auto" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
-            </div>
-
-            <div className="w-full hidden">
-              <img src={data[3].imageUrl} className="h-[840px] w-full m-auto" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
-            </div>
-
-            <div className="w-full hidden">
-              <img src={data[4].imageUrl} className="h-[840px] w-full m-auto" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
-            </div>
-          </div>
-
-          <IoIosArrowForward className="text-slate-200/50 size-7 hover:text-zinc-50 hover:scale-125 transition-colors duration-75 ease-linear cursor-pointer absolute right-4 z-10" onClick={handleChangeImage}/>
-        </div>
-        <div className="space-x-3">
-          <button className="bg-slate-100 w-2 h-2 rounded-full"></button>
-          <button className="bg-slate-600 w-2 h-2 rounded-full"></button>
-          <button className="bg-slate-600 w-2 h-2 rounded-full"></button>
-          <button className="bg-slate-600 w-2 h-2 rounded-full"></button>
-          <button className="bg-slate-600 w-2 h-2 rounded-full"></button>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
-      <div className="space-y-10">
+      <div className="mt-5 space-y-10">
         <section className="ml-14 space-y-4">
           <h2 className="text-xl font-semibold">Destaques</h2>
 
@@ -152,4 +131,3 @@ export function Home() {
     </div>
   );
 }
-
