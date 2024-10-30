@@ -1,4 +1,4 @@
-import { useCarouselQuery } from "../../hooks/useCustomQuery"; 
+import { useCarouselQuery } from "../../hooks/useCustomQuery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -26,7 +26,7 @@ export function Carousel() {
           }}
         >
           {carousel.map((movie) => (
-            <SwiperSlide key={movie.id}>
+            <SwiperSlide key={movie.id} className="relative">
               <picture>
                 <source media="(max-width:768px)" srcSet={movie.image780} />
                 <img
@@ -35,6 +35,14 @@ export function Carousel() {
                   className="h-[450px] md:h-[640px] lg:h-[840px] w-full"
                 />
               </picture>
+              <div className="absolute bottom-28 px-8 max-w-[600px] z-10 space-y-4">
+                <h3 className="text-5xl text-zinc-50">
+                  {movie.title}
+                </h3>
+                <p className="pl-2 text-zinc-300">
+                  {movie.overview.slice(0,130)}...
+                </p>
+              </div>
 
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
 

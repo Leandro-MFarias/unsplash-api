@@ -4,7 +4,6 @@ import { useTopRateQuery } from "../../hooks/useCustomQuery";
 
 export function TopRate() {
   const { data: topRate, isLoading, error } = useTopRateQuery();
-  console.log(topRate);
 
   return (
     <section className="ml-16 space-y-4">
@@ -31,7 +30,7 @@ export function TopRate() {
         className="custom-swiper swiper-test group"
       >
         {topRate?.map((movie, index) => (
-          <SwiperSlide key={movie.key}>
+          <SwiperSlide key={movie.id}>
             <div className="flex number">
               <p className="text-9xl font-semibold z-10 ">{index + 1}</p>
               <img

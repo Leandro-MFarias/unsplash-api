@@ -4,7 +4,6 @@ import { Navigation } from "swiper/modules";
 
 export function Populares() {
   const { data: popular, error, isLoading } = usePopularQuery();
-  console.log(popular);
 
   if (isLoading)
     return (

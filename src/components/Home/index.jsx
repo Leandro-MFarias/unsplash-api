@@ -12,8 +12,8 @@ export function Home() {
       <Carousel />
 
       <div className="mt-5 space-y-10">
-        <Populares />
         <TopRate />
+        <Populares />
       </div>
     </div>
   );
