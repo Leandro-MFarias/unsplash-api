@@ -25,8 +25,20 @@ export async function popularData() {
     ...movie,
     imageOriginal: `https://image.tmdb.org/t/p/original${movie.poster_path
     }`,
-    imagem500: `https://image.tmdb.org/t/p/w500${movie.poster_path
+    image500: `https://image.tmdb.org/t/p/w500${movie.poster_path
     }`
+  }))
+  return movieImage
+}
+
+export async function topRateData() {
+  const url = `https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1&api_key=${key}`
+  const response = await axios.get(url)
+  const results = await response.data.results
+  const topTen = results.slice(0,10) 
+  const movieImage = topTen.map(movie => ({
+    ...movie,
+    imageOriginal: `https://image.tmdb.org/t/p/original${movie.poster_path}`
   }))
   return movieImage
 }

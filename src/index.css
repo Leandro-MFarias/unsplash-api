@@ -17,7 +17,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 10px;
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -29,10 +29,28 @@
   right: 0;
 }
 
-.custom-swiper.group:hover .swiper-button-prev,
-.custom-swiper.group:hover .swiper-button-next {
+/* Mostra as setas ao passar o mouse sobre o contêiner do Swiper */
+.custom-swiper.group:hover .swiper-button-prev:not(.swiper-button-disabled),
+.custom-swiper.group:hover .swiper-button-next:not(.swiper-button-disabled) {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Oculta completamente as setas desabilitadas */
+.custom-swiper .swiper-button-disabled {
+  display: none;
+  opacity: 0;
+  pointer-events: none; /* Evita interação com setas desabilitadas */
+}
+
+.number p{
+  color: black;
+  -webkit-text-stroke: 3px #7e22ce;
+  transition: all .3s ease-in;
+}
+
+.number:hover p{
+  color: #7e22ce;
+  transform: translate(-10px, -10px);
+}
 

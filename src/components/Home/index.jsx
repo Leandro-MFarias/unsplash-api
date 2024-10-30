@@ -1,5 +1,6 @@
 import { Carousel } from "../Carousel";
 import { Populares } from "../Populares";
+import { TopRate } from "../TopRate";
 
 export function Home() {
   return (
@@ -12,37 +13,7 @@ export function Home() {
 
       <div className="mt-5 space-y-10">
         <Populares />
-
-        <section className="ml-14 space-y-4">
-          <h2 className="text-xl font-semibold">Filmes</h2>
-
-          <div className="flex space-x-6 overflow-hidden">
-            <div className="cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border hover:border-gray-200 ">
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-            <div>
-              <img src="https://fakeimg.pl/230x340" alt="" />
-            </div>
-          </div>
-        </section>
+        <TopRate />
       </div>
     </div>
   );

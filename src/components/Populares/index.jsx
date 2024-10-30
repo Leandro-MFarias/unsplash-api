@@ -21,6 +21,17 @@ export function Populares() {
       <Swiper
         modules={[Navigation]}
         slidesPerView={7}
+        breakpoints={{
+          600: {
+            slidesPerView: 3,
+          },
+          1100: {
+            slidesPerView: 4,
+          },
+          1200: {
+            slidesPerView: 7,
+          }
+        }}
         watchSlidesProgress
         navigation
         spaceBetween={10}
@@ -34,7 +45,7 @@ export function Populares() {
           <SwiperSlide key={movie.id}>
             <img
               className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-              src={movie.imagem500}
+              src={movie.image500}
               alt={movie.title}
             />
           </SwiperSlide>

@@ -1,4 +1,4 @@
-import { carouselData, popularData } from "../services/api";
+import { carouselData, popularData, topRateData } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
 export function useCarouselQuery() {
@@ -15,4 +15,12 @@ export function usePopularQuery() {
     queryFn: popularData,
     refetchOnWindowFocus: false,
   });
+}
+
+export function useTopRateQuery() {
+  return useQuery({
+    queryKey: ["topRate"],
+    queryFn: topRateData,
+    refetchOnWindowFocus: false
+  })
 }
