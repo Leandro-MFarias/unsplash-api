@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Container/Box -->
+  <path d="M20 40 L25 90 L75 90 L80 40" fill="#e74c3c" />
+  <path d="M15 40 L85 40" stroke="#c0392b" stroke-width="2" />
+  
+  <!-- Stripes on container -->
+  <path d="M30 50 L32 85" stroke="#c0392b" stroke-width="1" />
+  <path d="M45 50 L47 85" stroke="#c0392b" stroke-width="1" />
+  <path d="M60 50 L62 85" stroke="#c0392b" stroke-width="1" />
+  
+  <!-- Popcorn pieces -->
+  <circle cx="30" cy="35" r="8" fill="#fff5e6" />
+  <circle cx="45" cy="30" r="8" fill="#fff5e6" />
+  <circle cx="60" cy="32" r="8" fill="#fff5e6" />
+  <circle cx="75" cy="35" r="8" fill="#fff5e6" />
+  <circle cx="35" cy="25" r="8" fill="#fff5e6" />
+  <circle cx="50" cy="20" r="8" fill="#fff5e6" />
+  <circle cx="65" cy="25" r="8" fill="#fff5e6" />
+  
+  <!-- Shadows on popcorn -->
+  <path d="M28 32 Q30 38 33 35" fill="none" stroke="#f0e6d6" stroke-width="1" />
+  <path d="M43 27 Q45 33 48 30" fill="none" stroke="#f0e6d6" stroke-width="1" />
+  <path d="M58 29 Q60 35 63 32" fill="none" stroke="#f0e6d6" stroke-width="1" />
+  <path d="M73 32 Q75 38 78 35" fill="none" stroke="#f0e6d6" stroke-width="1" />
+</svg>
