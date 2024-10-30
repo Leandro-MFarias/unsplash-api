@@ -14,26 +14,30 @@ export function Populares() {
   if (error) return `Error: ${error.message}`;
 
   return (
-    <section className="ml-14 space-y-4">
+    <section className="ml-4 sm:ml-14 space-y-4">
       <h2 className="text-xl font-semibold">Populares</h2>
 
       <Swiper
         modules={[Navigation]}
         slidesPerView={7}
         breakpoints={{
-          600: {
+          300: {
+            slidesPerView: 2,
+          },
+          640: {
             slidesPerView: 3,
           },
-          1100: {
-            slidesPerView: 4,
+          1024: {
+            slidesPerView: 5,
           },
-          1200: {
+          1440: {
             slidesPerView: 7,
+            spaceBetween: 30,         
           }
         }}
         watchSlidesProgress
-        navigation
         spaceBetween={10}
+        navigation
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-navigation-size": "20px",
