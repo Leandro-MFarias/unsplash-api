@@ -10,8 +10,8 @@ export function Carousel() {
   if (error) return `Error: ${error.message}`;
 
   return (
-    <section className="w-full flex flex-col items-center px-4 space-y-2">
-      <div className="h-full w-full flex items-center justify-between m-0">
+    <section className="w-full flex flex-col items-center  space-y-2">
+      <div className="w-full">
         <Swiper
           modules={[Navigation, Pagination]}
           pagination={{ clickable: true }}
@@ -28,18 +28,19 @@ export function Carousel() {
           {carousel.map((movie) => (
             <SwiperSlide key={movie.id} className="relative">
               <picture>
-                <source media="(max-width:768px)" srcSet={movie.image780} />
+                <source media="(max-width:540px)" srcSet={movie.image780} />
                 <img
                   src={movie.imageOriginal}
                   alt={movie.title}
-                  className="h-[450px] md:h-[640px] lg:h-[840px] w-full"
+                  className="h-[640px] lg:h-[840px] w-full  md:object-fill"
                 />
               </picture>
-              <div className="absolute bottom-28 px-8 max-w-[600px] z-10 space-y-4">
-                <h3 className="text-5xl text-zinc-50">
+
+              <div className="flex flex-col items-center sm:items-start absolute bottom-12 text-center sm:text-start md:bottom-28 sm:pl-6 md:pl-8 z-10 space-y-4 w-full sm:max-w-[640px]">
+                <h3 className="text-2xl sm:text-5xl text-zinc-50">
                   {movie.title}
                 </h3>
-                <p className="pl-2 text-zinc-300">
+                <p className="pl-2 text-zinc-300 text-sm sm:text-base">
                   {movie.overview.slice(0,130)}...
                 </p>
               </div>
@@ -54,3 +55,5 @@ export function Carousel() {
     </section>
   );
 }
+
+// absolute 
