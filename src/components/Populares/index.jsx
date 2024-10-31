@@ -48,7 +48,7 @@ export function Populares() {
           <SwiperSlide key={movie.id}>
             <img
               className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-              src={movie.image500}
+              src={movie.imageOriginal}
               alt={movie.title}
             />
           </SwiperSlide>

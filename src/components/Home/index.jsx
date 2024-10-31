@@ -1,4 +1,5 @@
 import { Carousel } from "../Carousel";
+import { Genres } from "../Genres";
 import { Populares } from "../Populares";
 import { TopRate } from "../TopRate";
 
@@ -14,6 +15,7 @@ export function Home() {
       <div className="my-6 space-y-10">
         <TopRate />
         <Populares />
+        <Genres />
       </div>
     </main>
   );

@@ -1,26 +1,26 @@
-import { carouselData, popularData, topRateData } from "../services/api";
+import { carouselData, genreActionData, popularData, topRateData } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
-export function useCarouselQuery() {
+function useMovieQuery(queryKey, queryFn) {
   return useQuery({
-    queryKey: ["carousel"],
-    queryFn: carouselData,
+    queryKey: [queryKey],
+    queryFn: queryFn,
     refetchOnWindowFocus: false,
-  });
+  })
+}
+
+export function useCarouselQuery() {
+  return useMovieQuery('caroulse', carouselData)
 }
 
 export function usePopularQuery() {
-  return useQuery({
-    queryKey: ["popular"],
-    queryFn: popularData,
-    refetchOnWindowFocus: false,
-  });
+  return useMovieQuery('popular', popularData)
 }
 
 export function useTopRateQuery() {
-  return useQuery({
-    queryKey: ["topRate"],
-    queryFn: topRateData,
-    refetchOnWindowFocus: false
-  })
+  return useMovieQuery('topRate', topRateData)
+}
+
+export function useGenreAction() {
+  return useMovieQuery('genreAction', genreActionData)
 }
