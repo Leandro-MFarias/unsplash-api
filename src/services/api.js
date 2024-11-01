@@ -34,12 +34,13 @@ export function genreActionData() {
 }
 
 export async function movieDetailsData() {
-  const url = `https://api.themoviedb.org/3/movie/1012201?api_key=${key}&append_to_response=videos&language=pt-BR`
+  const url = `https://api.themoviedb.org/3/movie/889737?api_key=${key}&append_to_response=videos&language=pt-BR`
   const response = await axios.get(url)
   const data = await response.data
   const movieImage = {
     ...data,
-    imageOriginal: `https://image.tmdb.org/t/p/original${data.backdrop_path}`
+    imageBackdrop: `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
+    imagePoster: `https://image.tmdb.org/t/p/original${data.poster_path}`,
   }
   return movieImage
 }

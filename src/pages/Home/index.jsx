@@ -1,8 +1,7 @@
-import { Carousel } from "../Carousel";
-import { Details } from "../Details";
-import { Genres } from "../Genres";
-import { Populares } from "../Populares";
-import { TopRate } from "../TopRate";
+import { Carousel } from "../../components/Carousel";
+import { Genres } from "../../components/Genres";
+import { Populares } from "../../components/Populares";
+import { TopRate } from "../../components/TopRate";
 
 export function Home() {
   return (
@@ -18,7 +17,6 @@ export function Home() {
         <Populares />
         <Genres />
       </div>
-      <Details />
     </main>
   );
 }

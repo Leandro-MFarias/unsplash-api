@@ -1,4 +1,4 @@
-import { carouselData, genreActionData, popularData, topRateData } from "../services/api";
+import { carouselData, genreActionData, movieDetailsData, popularData, topRateData } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
 function useMovieQuery(queryKey, queryFn) {
@@ -23,4 +23,8 @@ export function useTopRateQuery() {
 
 export function useGenreAction() {
   return useMovieQuery('genreAction', genreActionData)
+}
+
+export function useDetailsQuery() {
+  return useMovieQuery('details', movieDetailsData)
 }
