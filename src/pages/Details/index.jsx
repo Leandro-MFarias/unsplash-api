@@ -1,16 +1,19 @@
 import { IoArrowUndo } from "react-icons/io5";
 import { useDetailsQuery } from "../../hooks/useCustomQuery";
+import { Link } from "react-router-dom";
 
 export function Details() {
-  const { data: details, isLoading } = useDetailsQuery()
+  const { data: details, isLoading } = useDetailsQuery();
 
   if (isLoading) return <p>Carregando..</p>;
 
   return (
     <div>
-      <button className="absolute top-10 left-10 z-10">
-        <IoArrowUndo className="size-10 hover:scale-125 transition duration-300 ease-in"/>
-      </button>
+      <Link to='/'>
+        <button className="absolute top-10 left-10 z-10">
+          <IoArrowUndo className="size-10 hover:scale-125 transition duration-300 ease-in" />
+        </button>
+      </Link>
 
       <img
         src={details.imageBackdrop}
@@ -31,7 +34,10 @@ export function Details() {
 
             <div className="flex space-x-4">
               {details.genres.map((genre) => (
-                <p key={genre.id} className="text-xl border-2 font-light border-white rounded-3xl px-3 py-1">
+                <p
+                  key={genre.id}
+                  className="text-xl border-2 font-light border-white rounded-3xl px-3 py-1"
+                >
                   {genre.name}
                 </p>
               ))}
