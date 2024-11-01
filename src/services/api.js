@@ -32,3 +32,14 @@ export function popularData() {
 export function genreActionData() {
   return fetchData('discover/movie?&with_genres=28&region=BR', null, { original: "poster_path" })
 }
+
+export async function movieDetailsData() {
+  const url = `https://api.themoviedb.org/3/movie/1012201?api_key=${key}&append_to_response=videos&language=pt-BR`
+  const response = await axios.get(url)
+  const data = await response.data
+  const movieImage = {
+    ...data,
+    imageOriginal: `https://image.tmdb.org/t/p/original${data.backdrop_path}`
+  }
+  return movieImage
+}
