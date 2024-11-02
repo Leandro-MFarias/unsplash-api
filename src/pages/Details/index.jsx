@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 export function Details() {
   const { id } = useParams()
-  console.log(id);
+
   const {data: details, isLoading} = useDetailsQuery(id)
 
   if (isLoading) return <p>Carregando...</p>;
@@ -61,7 +61,7 @@ export function Details() {
 
         <div className="flex flex-col items-center">
           <iframe
-            src={`https://www.youtube.com/embed/${details.videos.results[0].key}`}
+            src={`https://www.youtube.com/embed/${details.videos.results[0]?.key}`}
             className="z-10 w-[95%] h-[430px] lg:w-[1000px] md:h-[680px] rounded-xl"
           ></iframe>
         </div>

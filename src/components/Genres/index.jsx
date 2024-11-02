@@ -5,7 +5,8 @@ import { Navigation } from "swiper/modules";
 export function Genres() {
   const { data: genreAction, isLoading, error } = useGenreAction();
 
-  if (isLoading) return <p>Carregando...</p>;
+  if (isLoading) return <h2>Carrengando...</h2>;
+  if (error) return `Error: ${error.message}`;
 
   return (
     <div>

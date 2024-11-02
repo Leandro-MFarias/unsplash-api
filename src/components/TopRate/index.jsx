@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 export function TopRate() {
   const { data: topRate, isLoading, error } = useTopRateQuery();
 
-  if (isLoading) return <p>Carrgando...</p>;
+  if (isLoading) return <h2>Carrengando...</h2>;
+  if (error) return `Error: ${error.message}`;
 
   return (
     <section className="ml-4 sm:ml-16 space-y-4">

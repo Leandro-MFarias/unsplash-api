@@ -5,12 +5,7 @@ import { Navigation } from "swiper/modules";
 export function Populares() {
   const { data: popular, error, isLoading } = usePopularQuery();
 
-  if (isLoading)
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <h2 className="text-4xl">Carregando...</h2>
-      </div>
-    );
+  if (isLoading) return <h2>Carrengando...</h2>;
   if (error) return `Error: ${error.message}`;
 
   return (

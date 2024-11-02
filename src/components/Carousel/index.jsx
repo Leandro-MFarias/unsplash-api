@@ -5,7 +5,7 @@ import { Navigation, Pagination } from "swiper/modules";
 export function Carousel() {
   const { data: carousel, error, isLoading } = useCarouselQuery();
 
-  if (isLoading) return <h2>Carrengando</h2>;
+  if (isLoading) return <h2>Carrengando...</h2>;
   if (error) return `Error: ${error.message}`;
 
   return (
