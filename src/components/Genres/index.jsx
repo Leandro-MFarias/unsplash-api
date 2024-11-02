@@ -1,6 +1,12 @@
-import { useGenreAction, useGenreAnimation, useGenreComedy, useGenreDrama, useGenreHorror, useGenreRomance } from "../../hooks/useCustomQuery";
+import {
+  useGenreAction,
+  useGenreAnimation,
+  useGenreComedy,
+  useGenreDrama,
+  useGenreHorror,
+  useGenreRomance,
+} from "../../hooks/useCustomQuery";
 import { CustomSwiper } from "../CustomSwiper";
-
 
 export function Genres() {
   const { data: genreAction, isLoading, error } = useGenreAction();
@@ -17,63 +23,85 @@ export function Genres() {
     <div className="space-y-10">
       <CustomSwiper
         title="Filme de Ação"
-        slides={genreAction.map((movie) => (
-          <img
-            src={movie.imageOriginal}
-            alt={movie.title}
-            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-          />
-        ))}
+        slides={genreAction.map((movie) => ({
+          id: movie.id,
+          content: (
+            <img
+              src={movie.imageOriginal}
+              alt={movie.title}
+              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+            />
+          ),
+        }))}
       />
+
       <CustomSwiper
         title="Filme de Drama"
-        slides={genreDrama.map((movie) => (
-          <img
-            src={movie.imageOriginal}
-            alt={movie.title}
-            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-          />
-        ))}
+        slides={genreDrama.map((movie) => ({
+          id: movie.id,
+          content: (
+            <img
+              src={movie.imageOriginal}
+              alt={movie.title}
+              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+            />
+          ),
+        }))}
       />
+
       <CustomSwiper
         title="Filme de Comedia"
-        slides={genreComedy.map((movie) => (
-          <img
-            src={movie.imageOriginal}
-            alt={movie.title}
-            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-          />
-        ))}
+        slides={genreComedy.map((movie) => ({
+          id: movie.id,
+          content: (
+            <img
+              src={movie.imageOriginal}
+              alt={movie.title}
+              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+            />
+          ),
+        }))}
       />
+
       <CustomSwiper
         title="Animações"
-        slides={genreAnimation.map((movie) => (
-          <img
-            src={movie.imageOriginal}
-            alt={movie.title}
-            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-          />
-        ))}
+        slides={genreAnimation.map((movie) => ({
+          id: movie.id,
+          content: (
+            <img
+              src={movie.imageOriginal}
+              alt={movie.title}
+              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+            />
+          ),
+        }))}
       />
+
       <CustomSwiper
         title="Filme de Romance"
-        slides={genreRomance.map((movie) => (
-          <img
-            src={movie.imageOriginal}
-            alt={movie.title}
-            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-          />
-        ))}
+        slides={genreRomance.map((movie) => ({
+          id: movie.id,
+          content: (
+            <img
+              src={movie.imageOriginal}
+              alt={movie.title}
+              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+            />
+          ),
+        }))}
       />
       <CustomSwiper
         title="Filme de Terror"
-        slides={genreHorror.map((movie) => (
-          <img
-            src={movie.imageOriginal}
-            alt={movie.title}
-            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-          />
-        ))}
+        slides={genreHorror.map((movie) => ({
+          id: movie.id,
+          content: (
+            <img
+              src={movie.imageOriginal}
+              alt={movie.title}
+              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+            />
+          ),
+        }))}
       />
     </div>
   );

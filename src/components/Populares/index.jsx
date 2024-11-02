@@ -1,6 +1,7 @@
 import { usePopularQuery } from "../../hooks/useCustomQuery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 export function Populares() {
   const { data: popular, error, isLoading } = usePopularQuery();
@@ -27,8 +28,8 @@ export function Populares() {
           },
           1440: {
             slidesPerView: 7,
-            spaceBetween: 30,         
-          }
+            spaceBetween: 30,
+          },
         }}
         watchSlidesProgress
         spaceBetween={10}
@@ -41,11 +42,13 @@ export function Populares() {
       >
         {popular.map((movie) => (
           <SwiperSlide key={movie.id}>
-            <img
-              className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
-              src={movie.imageOriginal}
-              alt={movie.title}
-            />
+            <Link to={`/movie/${movie.id}`}>
+              <img
+                className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+                src={movie.imageOriginal}
+                alt={movie.title}
+              />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

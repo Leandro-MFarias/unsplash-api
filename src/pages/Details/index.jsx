@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 export function Details() {
   const { id } = useParams()
 
-  const {data: details, isLoading} = useDetailsQuery(id)
+  const {data: details, isLoading, error} = useDetailsQuery(id)
 
   if (isLoading) return <h2>Carrengando...</h2>;
   if (error) return `Error: ${error.message}`;

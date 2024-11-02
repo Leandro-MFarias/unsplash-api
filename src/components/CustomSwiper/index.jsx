@@ -1,9 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 export function CustomSwiper({
   title,
-  slides = []
+  slides = [],
 }) {
   return (
     <div className="ml-4 sm:ml-14 space-y-4">
@@ -35,9 +36,9 @@ export function CustomSwiper({
         }}
         className="custom-swiper group"
       >
-        {slides.map((movie, index) => (
-          <SwiperSlide key={index}>
-            {movie}
+        {slides.map(( { id, content } ) => (
+          <SwiperSlide key={id}>
+            <Link to={`/movie/${id}`}>{content}</Link>
           </SwiperSlide>
         ))}
       </Swiper>
