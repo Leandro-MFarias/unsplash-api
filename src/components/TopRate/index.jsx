@@ -4,9 +4,8 @@ import { useTopRateQuery } from "../../hooks/useCustomQuery";
 import { Link } from "react-router-dom";
 
 export function TopRate() {
-  const { data: topRate, isLoading, error } = useTopRateQuery();
+  const { data: topRate, error } = useTopRateQuery();
 
-  if (isLoading) return <h2>Carrengando...</h2>;
   if (error) return `Error: ${error.message}`;
 
   return (

@@ -9,14 +9,13 @@ import {
 import { CustomSwiper } from "../CustomSwiper";
 
 export function Genres() {
-  const { data: genreAction, isLoading, error } = useGenreAction();
+  const { data: genreAction, error } = useGenreAction();
   const { data: genreDrama } = useGenreDrama();
   const { data: genreComedy } = useGenreComedy();
   const { data: genreAnimation } = useGenreAnimation();
   const { data: genreRomance } = useGenreRomance();
   const { data: genreHorror } = useGenreHorror();
 
-  if (isLoading) return <h2>Carrengando...</h2>;
   if (error) return `Error: ${error.message}`;
 
   return (
@@ -50,7 +49,7 @@ export function Genres() {
       />
 
       <CustomSwiper
-        title="Filme de Comedia"
+        title="Filme de Comédia"
         slides={genreComedy.map((movie) => ({
           id: movie.id,
           content: (
