@@ -1,4 +1,4 @@
-import loading from '../../../public/loading.svg'
+import loading from '../../assets/loading.svg'
 
 export function Loader() {
   return (
