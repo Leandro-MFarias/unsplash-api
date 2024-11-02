@@ -29,11 +29,11 @@ export function Carousel() {
           {carousel.map((movie) => (
             <SwiperSlide key={movie.id} className="relative">
               <picture>
-                <source media="(max-width:540px)" srcSet={movie.image780} />
+                {/* <source media="(max-width:540px)" srcSet={movie.image780} /> */}
                 <img
                   src={movie.imageOriginal}
                   alt={movie.title}
-                  className="h-[640px] lg:h-[840px] w-full  md:object-fill"
+                  className="h-[640px] lg:h-[840px] w-full  object-cover md:object-fill"
                 />
               </picture>
 

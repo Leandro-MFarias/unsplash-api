@@ -25,7 +25,7 @@ export function Details() {
         alt={details.title}
       />
 
-      <div className="z-10 mb-20 pt-32 px-12 space-y-20 md:space-y-0">
+      <div className="z-10 mb-20 pt-32 px-2 sm:px-12 space-y-20 md:space-y-0">
         <div className="z-10 flex flex-col md:flex-row items-center justify-center sm:space-y-0 space-y-10 space-x-12 md:h-[80vh]">
           <img
             src={details.imagePoster}
@@ -34,13 +34,13 @@ export function Details() {
           />
 
           <div className="z-10 space-y-10 max-w-xl lg:max-w-4xl">
-            <h1 className="text-5xl font-bold ">{details.title}</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold ">{details.title}</h1>
 
             <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-start sm:items-center lg:space-x-4">
               {details.genres.map((genre) => (
                 <p
                   key={genre.id}
-                  className="text-lg lg:text-xl border-2 font-light border-white rounded-3xl px-6 py-1 mb-4 lg:mb-0 ml-4 lg:ml-0 "
+                  className="text-base lg:text-xl border-2 font-light border-white rounded-3xl px-6 py-1 mb-4 lg:mb-0 ml-4 lg:ml-0 "
                 >
                   {genre.name}
                 </p>
@@ -48,7 +48,7 @@ export function Details() {
             </div>
 
             <div className="space-y-2">
-              <p className="max-w-2/5 text-xl mb-6">{details.overview}</p>
+              <p className="max-w-2/5 text-base sm:text-xl mb-6">{details.overview}</p>
               <p>
                 <span className="text-purple-600">Duração: </span>{" "}
                 {details.runtime}min
