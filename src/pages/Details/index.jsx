@@ -24,22 +24,22 @@ export function Details() {
         alt={details.title}
       />
 
-      <div className="z-10 mb-20 pt-32 px-12 sm:space-y-0 space-y-32">
-        <div className="z-10 flex flex-col sm:flex-row items-center justify-center sm:space-y-0 space-y-10 space-x-12 h-[80vh]">
+      <div className="z-10 mb-20 pt-32 px-12 space-y-20 md:space-y-0">
+        <div className="z-10 flex flex-col md:flex-row items-center justify-center sm:space-y-0 space-y-10 space-x-12 md:h-[80vh]">
           <img
             src={details.imagePoster}
             alt={details.title}
-            className="z-50 w-80 h-[520px] object-fit rounded-3xl"
+            className="z-50 w-80 h-[520px] object-fit rounded-3xl mb-6 md:mb-0"
           />
 
-          <div className="z-10 space-y-10 max-w-2xl">
+          <div className="z-10 space-y-10 max-w-xl lg:max-w-4xl">
             <h1 className="text-5xl font-bold ">{details.title}</h1>
 
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-start sm:items-center lg:space-x-4">
               {details.genres.map((genre) => (
                 <p
                   key={genre.id}
-                  className="text-xl border-2 font-light border-white rounded-3xl px-3 py-1"
+                  className="text-lg lg:text-xl border-2 font-light border-white rounded-3xl px-6 py-1 mb-4 lg:mb-0 ml-4 lg:ml-0 "
                 >
                   {genre.name}
                 </p>

@@ -9,13 +9,14 @@ import {
 import { CustomSwiper } from "../CustomSwiper";
 
 export function Genres() {
-  const { data: genreAction, error } = useGenreAction();
+  const { data: genreAction, error, isLoading } = useGenreAction();
   const { data: genreDrama } = useGenreDrama();
   const { data: genreComedy } = useGenreComedy();
   const { data: genreAnimation } = useGenreAnimation();
   const { data: genreRomance } = useGenreRomance();
   const { data: genreHorror } = useGenreHorror();
 
+  if (isLoading) return
   if (error) return `Error: ${error.message}`;
 
   return (

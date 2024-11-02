@@ -4,8 +4,9 @@ import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 export function Populares() {
-  const { data: popular, error } = usePopularQuery();
+  const { data: popular, error, isLoading } = usePopularQuery();
 
+  if (isLoading) return
   if (error) return `Error: ${error.message}`;
 
   return (
