@@ -1,4 +1,4 @@
-import { carouselData, genreActionData, genreAnimationData, genreComedyData, genreDramaData, genreHorrorData, genreRomanceData, movieDetailsData, popularData, topRateData } from "../services/api";
+import { carouselData, genreActionData, genreAnimationData, genreComedyData, genreDramaData, genreHorrorData, genreRomanceData, movieDetailsData, popularData, searchMovieData, topRateData } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
 function useMovieQuery(queryKey, queryFn) {
@@ -24,6 +24,14 @@ export function useTopRateQuery() {
 export function useDetailsQuery(id) {
   return useMovieQuery(['details', id], () => movieDetailsData(id))
 }
+
+export function useSearchMovie(movieName) {
+  return useMovieQuery(['search', movieName], () => searchMovieData(movieName), {
+    enabled: false, // Inicia a busca manualmente
+  });
+}
+
+// EndPoints Generos
 
 export function useGenreAction() {
   return useMovieQuery('genreAction', genreActionData)

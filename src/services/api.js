@@ -30,6 +30,12 @@ export async function movieDetailsData(id) {
   return movieImage;
 }
 
+export async function searchMovieData(query) {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${key}&language=pt-BR`;
+  const response = await axios.get(url);
+  return response.data.results;
+}
+
 export function carouselData() {
   return fetchData("trending/movie/day?", 6, { original: "backdrop_path" });
 }
