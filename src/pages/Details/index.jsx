@@ -1,6 +1,7 @@
 import { IoArrowUndo } from "react-icons/io5";
 import { useDetailsQuery } from "../../hooks/useCustomQuery";
 import { Link, useParams } from "react-router-dom";
+import { Loader } from "../../components/Loader"
 
 export function Details() {
   const { id } = useParams()
