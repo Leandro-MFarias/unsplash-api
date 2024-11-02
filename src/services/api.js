@@ -33,6 +33,26 @@ export function genreActionData() {
   return fetchData('discover/movie?&with_genres=28&region=BR', null, { original: "poster_path" })
 }
 
+export function genreDramaData() {
+  return fetchData('discover/movie?&with_genres=18&region=BR', null, { original: "poster_path" })
+}
+
+export function genreComedyData() {
+  return fetchData('discover/movie?&with_genres=35&region=BR', null, { original: "poster_path" })
+}
+
+export function genreAnimationData() {
+  return fetchData('discover/movie?&with_genres=16&region=BR', null, { original: "poster_path" })
+}
+
+export function genreRomanceData() {
+  return fetchData('discover/movie?&with_genres=10749&region=BR', null, { original: "poster_path" })
+}
+
+export function genreHorrorData() {
+  return fetchData('discover/movie?&with_genres=27&region=BR', null, { original: "poster_path" })
+}
+
 export async function movieDetailsData(id) {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&append_to_response=videos&language=pt-BR`
   const response = await axios.get(url)

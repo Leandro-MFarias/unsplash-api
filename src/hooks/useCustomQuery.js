@@ -1,4 +1,4 @@
-import { carouselData, genreActionData, movieDetailsData, popularData, topRateData } from "../services/api";
+import { carouselData, genreActionData, genreAnimationData, genreComedyData, genreDramaData, genreHorrorData, genreRomanceData, movieDetailsData, popularData, topRateData } from "../services/api";
 import { useQuery } from "@tanstack/react-query";
 
 function useMovieQuery(queryKey, queryFn) {
@@ -21,10 +21,30 @@ export function useTopRateQuery() {
   return useMovieQuery('topRate', topRateData)
 }
 
+export function useDetailsQuery(id) {
+  return useMovieQuery(['details', id], () => movieDetailsData(id))
+}
+
 export function useGenreAction() {
   return useMovieQuery('genreAction', genreActionData)
 }
 
-export function useDetailsQuery(id) {
-  return useMovieQuery(['details', id], () => movieDetailsData(id))
+export function useGenreDrama() {
+  return useMovieQuery('genreDrama', genreDramaData)
+}
+
+export function useGenreComedy() {
+  return useMovieQuery('genreComedy', genreComedyData)
+}
+
+export function useGenreAnimation() {
+  return useMovieQuery('genreAnimation', genreAnimationData)
+}
+
+export function useGenreRomance() {
+  return useMovieQuery('genreRomance', genreRomanceData)
+}
+
+export function useGenreHorror() {
+  return useMovieQuery('genreHorror', genreHorrorData)
 }
