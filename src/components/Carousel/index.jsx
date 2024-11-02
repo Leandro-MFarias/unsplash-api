@@ -2,11 +2,12 @@ import { useCarouselQuery } from "../../hooks/useCustomQuery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { Loader } from "../Loader";
 
 export function Carousel() {
   const { data: carousel, error, isLoading } = useCarouselQuery();
 
-  if (isLoading) return <h2>Carrengando...</h2>;
+  if (isLoading) return <div><Loader /></div>
   if (error) return `Error: ${error.message}`;
 
   return (
