@@ -1,6 +1,7 @@
 import { useGenreAction } from "../../hooks/useCustomQuery";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { CustomSwiper } from "../CustomSwiper";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
 
 export function Genres() {
   const { data: genreAction, isLoading, error } = useGenreAction();
@@ -9,8 +10,33 @@ export function Genres() {
   if (error) return `Error: ${error.message}`;
 
   return (
-    <div>
-      <div className="ml-4 sm:ml-14 space-y-4">
+    <div className="space-y-10">
+      <CustomSwiper
+        title="Filme de Ação"
+        slides={genreAction.map((movie) => (
+          <img
+            src={movie.imageOriginal}
+            alt={movie.title}
+            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+          />
+        ))}
+      />
+      <CustomSwiper
+        title="Filme de Drama"
+        slides={genreAction.map((movie) => (
+          <img
+            src={movie.imageOriginal}
+            alt={movie.title}
+            className="h-[340px] w-[260px] cursor-pointer border border-transparent transition duration-300 ease-in-out hover:border-2 hover:border-gray-200 rounded-sm object-cover"
+          />
+        ))}
+      />
+    </div>
+  );
+}
+
+{
+  /* <div className="ml-4 sm:ml-14 space-y-4">
         <h2 className="text-xl font-semibold">Filmes de Ação</h2>
         <Swiper
           modules={[Navigation]}
@@ -49,8 +75,5 @@ export function Genres() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-      
-    </div>
-  );
+      </div> */
 }
