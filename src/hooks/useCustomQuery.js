@@ -25,6 +25,6 @@ export function useGenreAction() {
   return useMovieQuery('genreAction', genreActionData)
 }
 
-export function useDetailsQuery() {
-  return useMovieQuery('details', movieDetailsData)
+export function useDetailsQuery(id) {
+  return useMovieQuery(['details', id], () => movieDetailsData(id))
 }

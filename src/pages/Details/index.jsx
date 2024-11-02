@@ -1,11 +1,13 @@
 import { IoArrowUndo } from "react-icons/io5";
 import { useDetailsQuery } from "../../hooks/useCustomQuery";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export function Details() {
-  const { data: details, isLoading } = useDetailsQuery();
+  const { id } = useParams()
+  console.log(id);
+  const {data: details, isLoading} = useDetailsQuery(id)
 
-  if (isLoading) return <p>Carregando..</p>;
+  if (isLoading) return <p>Carregando...</p>;
 
   return (
     <div>
@@ -60,7 +62,7 @@ export function Details() {
         <div className="flex flex-col items-center">
           <iframe
             src={`https://www.youtube.com/embed/${details.videos.results[0].key}`}
-            className="z-10 w-[95%] h-[430px] lg:w-[1000px] md:h-[680px]"
+            className="z-10 w-[95%] h-[430px] lg:w-[1000px] md:h-[680px] rounded-xl"
           ></iframe>
         </div>
       </div>

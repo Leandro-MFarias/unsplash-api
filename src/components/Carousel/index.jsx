@@ -4,7 +4,7 @@ import { Navigation, Pagination } from "swiper/modules";
 
 export function Carousel() {
   const { data: carousel, error, isLoading } = useCarouselQuery();
-console.log(carousel);
+
   if (isLoading) return <h2>Carrengando</h2>;
   if (error) return `Error: ${error.message}`;
 
@@ -40,7 +40,7 @@ console.log(carousel);
                   {movie.title}
                 </h3>
                 <p className="pl-2 text-zinc-300 text-sm sm:text-base">
-                  {movie.overview.slice(0,130)}...
+                  {movie.overview.slice(0, 130)}...
                 </p>
               </div>
 
@@ -55,4 +55,4 @@ console.log(carousel);
   );
 }
 
-// absolute 
+// absolute
