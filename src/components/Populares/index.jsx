@@ -9,7 +9,7 @@ export function Populares() {
   if (error) return `Error: ${error.message}`;
 
   return (
-    <section className="ml-4 sm:ml-14 space-y-4">
+    <div className="ml-4 sm:ml-14 space-y-4">
       <h2 className="text-xl font-semibold">Populares</h2>
 
       <Swiper
@@ -49,6 +49,6 @@ export function Populares() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 }

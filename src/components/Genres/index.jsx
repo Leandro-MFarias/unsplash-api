@@ -10,7 +10,7 @@ export function Genres() {
 
   return (
     <div>
-      <section className="ml-4 sm:ml-14 space-y-4">
+      <div className="ml-4 sm:ml-14 space-y-4">
         <h2 className="text-xl font-semibold">Filmes de Ação</h2>
         <Swiper
           modules={[Navigation]}
@@ -49,7 +49,8 @@ export function Genres() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </section>
+      </div>
+      
     </div>
   );
 }

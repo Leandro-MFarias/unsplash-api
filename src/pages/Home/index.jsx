@@ -12,11 +12,11 @@ export function Home() {
       
       <Carousel />
 
-      <div className="my-6 space-y-10">
+      <section className="my-6 space-y-10">
         <TopRate />
         <Populares />
         <Genres />
-      </div>
+      </section>
     </main>
   );
 }

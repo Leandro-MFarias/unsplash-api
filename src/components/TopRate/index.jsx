@@ -10,7 +10,7 @@ export function TopRate() {
   if (error) return `Error: ${error.message}`;
 
   return (
-    <section className="ml-4 sm:ml-16 space-y-4">
+    <div className="ml-4 sm:ml-16 space-y-4">
       <h2 className="text-xl font-semibold">Filmes Mais Bem Avaliados</h2>
       <Swiper
         modules={[Navigation]}
@@ -59,6 +59,6 @@ export function TopRate() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 }
