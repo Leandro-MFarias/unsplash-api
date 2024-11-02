@@ -7,7 +7,7 @@ export function Details() {
 
   const {data: details, isLoading, error} = useDetailsQuery(id)
 
-  if (isLoading) return <h2>Carrengando...</h2>;
+  if (isLoading) return <div><Loader /></div>
   if (error) return `Error: ${error.message}`;
 
   return (
