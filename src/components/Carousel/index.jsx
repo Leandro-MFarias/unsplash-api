@@ -53,7 +53,7 @@ export function Carousel() {
 
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
 
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black"></div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -61,5 +61,3 @@ export function Carousel() {
     </section>
   );
 }
-
-// absolute
