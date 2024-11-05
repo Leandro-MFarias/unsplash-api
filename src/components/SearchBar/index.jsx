@@ -28,10 +28,10 @@ export function SearchBar() {
   };
 
   return (
-    <div className="flex items-center space-x-4 absolute z-10 top-12 right-24 bg-zinc-950 px-3 py-2 rounded-2xl">
+    <div className="flex items-center absolute top-10 sm:space-x-4 z-10  right-2 sm:right-24 bg-zinc-950 px-2 sm:px-3 py-2 rounded-2xl">
       <input
         type="text"
-        className="bg-transparent outline-none"
+        className="w-40 sm:w-[200px] bg-transparent outline-none text-sm sm:text-base"
         placeholder="Buscar filme..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}

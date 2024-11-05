@@ -8,7 +8,7 @@ export function Home() {
   return (
     <main>
       <div className="z-10">
-        <h1 className="text-zinc-50 text-3xl px-2 sm:px-8 py-10 ml-8 absolute z-10 font-bold">
+        <h1 className="text-zinc-50 text-3xl px-2 sm:px-8 py-10 ml-1 sm:ml-8 absolute z-10 font-bold">
           Cinevault
         </h1>
         <SearchBar />
