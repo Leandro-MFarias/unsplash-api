@@ -42,7 +42,7 @@ Efficiently fetches data using @tanstack/react-query for smooth and optimized AP
 <div>
     <img src="https://shields.io/badge/react-black?logo=react&style=for-the-badge">
     <img src="https://img.shields.io/badge/Tailwindcss-black?style=for-the-badge&logo=tailwindcss&logoColor=1572B6">
-    <img src="https://img.shields.io/badge/TS-black?style=for-the-badge&logo=typescript">
+    <img src="https://img.shields.io/badge/JS-black?style=for-the-badge&logo=javascript">
 </div>
 
 ### 📸 Preview
